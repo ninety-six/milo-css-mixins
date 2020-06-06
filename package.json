@@ -1,0 +1,25 @@
+{
+    "name": "@milo-css/mixins",
+    "version": "1.0.0",
+    "description": "An array of functions and mixins to be used in your Milo CSS-based framework.",
+    "keywords": [
+        "css",
+        "mixins",
+        "system",
+        "responsive",
+        "framework"
+    ],
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "ninety-six <benhall.ninetysix@gmail.com>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ninety-six/milo-css-mixins.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ninety-six/milo-css-mixins/issues"
+    },
+    "homepage": "https://github.com/ninety-six/milo-css-mixins#readme"
+}

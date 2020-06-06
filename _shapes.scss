@@ -1,0 +1,98 @@
+// Shapes
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Square
+//
+// Usage:
+// @include square(color("red"), 20px);
+//
+// also has rounded corners
+// @include square(color("red"), 20px, true);
+//
+@mixin square($color, $size: 12px, $round: false) {
+    background: $color;
+    @if $round {
+        border-radius: $global-radius;
+    }
+    height: $size;
+    width: $size;
+}
+
+// Rectangle
+//
+// Usage:
+// @include rectangle(color("red"), 20px, 10px);
+//
+// also has rounded corners
+// @include rectangle(color("red"), 20px, 10px, true);
+//
+@mixin rectangle($color, $width: 12px, $height: 6px, $round: false) {
+    background: $color;
+    @if $round {
+        border-radius: $global-radius;
+    }
+    height: $height;
+    width: $width;
+}
+
+// Circle
+//
+// Usage:
+// @include circle(color("red"), 20px);
+//
+@mixin circle($color, $size: 12px) {
+    background: $color;
+    border-radius: 50%;
+    height: $size;
+    width: $size;
+}
+
+// Oval
+//
+// Usage:
+// @include oval(color("red"), 20px, 10px);
+//
+@mixin oval($color, $width: 12px, $height: 6px) {
+    background: $color;
+    border-radius: 50%;
+    height: $height;
+    width: $width;
+}
+
+// Triangle
+//
+// Usage:
+// pointing down
+// @include triangle(color("red"), down, 10px);
+//
+// also has rounded corners
+// @include triangle(color("red"), down, 10px, true);
+//
+@mixin triangle($color, $direction, $size: 6px, $round: false) {
+    @if $round {
+        border-radius: $global-radius;
+    }
+    @if $direction == down {
+        border-top: $size solid $color;
+        border-right: $size solid transparent;
+        border-left: $size solid transparent;
+        margin-top: 0 - round($size / 2.5);
+    } @else if $direction == up {
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+        border-left: $size solid transparent;
+        margin-bottom: 0 - round($size / 2.5);
+    } @else if $direction == right {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+        margin-right: -$size;
+    } @else if $direction == left {
+        border-top: $size solid transparent;
+        border-right: $size solid $color;
+        border-bottom: $size solid transparent;
+        margin-left: -$size;
+    }
+    height: 0;
+    width: 0;
+}
